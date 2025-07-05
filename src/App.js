@@ -10,6 +10,10 @@ const RacingGame = () => {
   const [raceStarted, setRaceStarted] = useState(false);
   const [winner, setWinner] = useState(null);
 
+  // URLs das logos - substitua pelos seus caminhos/URLs
+  const logo1Url = "/logob2.png"; // Coloque aqui o caminho da logo 1
+  const logo2Url = "/logovila.png"; // Coloque aqui o caminho da logo 2
+
   const colors = [
     '#FF4444', '#44FF44', '#4444FF', '#FF44FF', '#FFFF44', '#44FFFF',
     '#FF8844', '#88FF44', '#4488FF', '#FF4488', '#88FFFF', '#FFFF88',
@@ -117,9 +121,44 @@ const RacingGame = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
-          <h1 className="text-5xl font-bold text-white mb-4 flex items-center justify-center gap-3">
-            🏁 Corrida Interativa
-          </h1>
+          {/* Header com Logos e Título */}
+          <div className="flex items-center justify-center gap-8 mb-6">
+            {/* Logo Empresa 1 */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 min-h-[80px] min-w-[180px] flex items-center justify-center">
+              <img 
+                src={logo1Url} 
+                alt="Logo Empresa 1" 
+                className="max-h-16 max-w-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextElementSibling.style.display = 'block';
+                }}
+              />
+              <div className="text-white/60 text-sm hidden">Logo Empresa 1</div>
+            </div>
+
+            {/* Título Central */}
+            <div className="flex-1 max-w-md">
+              <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+                🏁 DESAFIO EM DOBRO B2List
+              </h1>
+            </div>
+
+            {/* Logo Empresa 2 */}
+            <div className="bg-white/10 backdrop-blur-lg rounded-xl p-4 min-h-[80px] min-w-[180px] flex items-center justify-center">
+              <img 
+                src={logo2Url} 
+                alt="Logo Empresa 2" 
+                className="max-h-16 max-w-full object-contain"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextElementSibling.style.display = 'block';
+                }}
+              />
+              <div className="text-white/60 text-sm hidden">Logo Empresa 2</div>
+            </div>
+          </div>
+
           <p className="text-xl text-blue-200 mb-4">
             Competição de Vendas
           </p>
