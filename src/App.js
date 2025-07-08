@@ -140,7 +140,7 @@ const RacingGame = () => {
             {/* Título Central */}
             <div className="flex-1 max-w-md">
               <h1 className="text-3xl lg:text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
-                🏁 DESAFIO EM DOBRO B2List
+                🏁 Rally B2List
               </h1>
             </div>
 
